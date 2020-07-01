@@ -1,0 +1,24 @@
+name: CI
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Run a multi-line script
+      run: |
+        mkdir -p bin
+        curl -s https://rgz.ee/bin/ssg5 > bin/ssg5
+        curl -s https://rgz.ee/bin/Markdown.pl > bin/Markdown.pl
+        chmod +x bin/ssg5 bin/Markdown.pl
+        PATH="$HOME/bin:$PATH"
+        mkdir src dst
+        echo '# Hello, World!' > src/index.md
+        echo '<html><title></title>' > src/_header.html
+        bin/ssg5 src dst 'Test' 'http://www'
+        find dst
