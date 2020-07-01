@@ -16,7 +16,7 @@ jobs:
         curl -s https://rgz.ee/bin/ssg5 > bin/ssg5
         curl -s https://rgz.ee/bin/Markdown.pl > bin/Markdown.pl
         chmod +x bin/ssg5 bin/Markdown.pl
-        PATH="$HOME/bin:$PATH"
+        PATH="$PWD/bin:$PATH"
         mkdir src dst
         echo '# Hello, World!' > src/index.md
         echo '<html><title></title>' > src/_header.html
