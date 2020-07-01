@@ -15,6 +15,7 @@ jobs:
       run: |
         mkdir src
         echo '# Hello, World2!' > src/index.md
+        date >> src/index.md
         echo '<html><title></title>' > src/_header.html
         /bin/ssg5 src docs 'Test' 'http://www'
         git config --global user.name 'Your Name'
@@ -22,4 +23,3 @@ jobs:
         git add docs
         git commit -am update
         git push
-        find dst
