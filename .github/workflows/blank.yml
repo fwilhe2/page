@@ -16,7 +16,7 @@ jobs:
         mkdir src
         echo '# Hello, World2!' > src/index.md
         echo '<html><title></title>' > src/_header.html
-        bin/ssg5 src docs 'Test' 'http://www'
+        /bin/ssg5 src docs 'Test' 'http://www'
         git config --global user.name 'Your Name'
         git config --global user.email 'your-username@users.noreply.github.com'
         git add docs
